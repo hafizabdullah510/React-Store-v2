@@ -66,3 +66,8 @@ export type CartItem = {
   amount: number;
   company: string;
 };
+
+export type BreadCrumbItem = {
+  text: string;
+  path: string;
+};
