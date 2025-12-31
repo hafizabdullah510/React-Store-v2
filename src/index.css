@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: corporate --default, dim --prefersdark;
+}
+
+@layer utilities {
+  .container-responsive {
+    @apply max-w-6xl mx-auto px-8;
+  }
+}
