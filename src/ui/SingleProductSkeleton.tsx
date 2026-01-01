@@ -3,7 +3,7 @@ const SingleProductSkeleton = () => {
   return (
     <>
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-        <div className="h-96 w-96 object-cover rounded-lg lg:w-full skeleton" />
+        <div className="h-96 w-full sm:w-96 object-cover rounded-lg lg:w-full skeleton" />
         <div>
           <div className="h-9 w-28 skeleton" />
           <div className="h-7 w-20 mt-2 skeleton" />

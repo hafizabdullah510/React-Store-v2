@@ -29,7 +29,6 @@ const Products = () => {
               <ProductListViewSkeleton key={index} />
             );
           })}
-          x{" "}
         </div>
       </>
     );
@@ -52,7 +51,10 @@ const Products = () => {
       ) : (
         <>
           <ProductsView products={products} isFetching={isFetching} />
-          {!isFetching && <Pagination pagination={metadata.pagination} />}
+          <Pagination
+            pagination={metadata.pagination}
+            isFetching={isFetching}
+          />
         </>
       )}
     </>

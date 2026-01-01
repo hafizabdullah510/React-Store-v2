@@ -3,13 +3,18 @@ import { useAppDispatch } from "../app/hooks";
 import { setPage } from "../features/products/productsSlice";
 const Pagination = ({
   pagination,
+  isFetching,
 }: {
   pagination: ProductMetadata["pagination"];
+  isFetching: boolean;
 }) => {
   const dispatch = useAppDispatch();
   const { page, pageCount } = pagination;
   const isFirstPage = page === 1;
   const isLastPage = page === pageCount;
+  if (isFetching) {
+    return null;
+  }
   return (
     <div className="mt-16 flex justify-end">
       <button

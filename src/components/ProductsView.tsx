@@ -26,7 +26,6 @@ const ProductsView = ({
             <ProductListItemSkeleton key={index} />
           );
         })}
-        x{" "}
       </div>
     );
   }
