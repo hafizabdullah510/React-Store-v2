@@ -6,12 +6,19 @@ import {
   Error,
   HomeLayout,
   SingleProduct,
+  Login,
+  Orders,
 } from "./pages";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import ErrorElement from "./ui/ErrorElement";
 import { useEffect } from "react";
 import { updateCartTotals } from "./features/cart/cartSlice";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
+import { SignedOut, SignedIn } from "@clerk/react-router";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,7 +50,25 @@ const router = createBrowserRouter([
         element: <SingleProduct />,
         errorElement: <ErrorElement />,
       },
+      {
+        path: "orders",
+        element: <Orders />,
+        errorElement: <ErrorElement />,
+      },
     ],
+  },
+  {
+    path: "/login",
+    element: (
+      <>
+        <SignedOut>
+          <Login />
+        </SignedOut>
+        <SignedIn>
+          <Navigate to={"/"} replace />
+        </SignedIn>
+      </>
+    ),
   },
 ]);
 function App() {

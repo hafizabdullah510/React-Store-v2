@@ -2,8 +2,8 @@ import type { Product } from "../utils/types";
 import ProductGridItem from "./ProductGridItem";
 import ProductListItem from "./ProductListItem";
 import { useAppSelector } from "../app/hooks";
-import ProductGridViewSkeleton from "../ui/ProductGridViewSkeleton";
-import ProductListItemSkeleton from "../ui/ProductListViewSkeleton";
+import ProductGridViewSkeleton from "../ui/skeletons/ProductGridViewSkeleton";
+import ProductListItemSkeleton from "../ui/skeletons/ProductListViewSkeleton";
 const ProductsView = ({
   products,
   isFetching,

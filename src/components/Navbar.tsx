@@ -7,11 +7,13 @@ import { useRef } from "react";
 import ThemeToggle from "./ThemeToggle";
 import logo from "../assets/AB.svg";
 import { useAppSelector } from "../app/hooks";
+import { useUser } from "@clerk/react-router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLUListElement>(null);
   const { totalItems } = useAppSelector((state) => state.cart);
+  const { isSignedIn } = useUser();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -44,11 +46,15 @@ const Navbar = () => {
         lg:shadow-none lg:w-auto lg:p-0 lg:static lg:flex lg:items-center text-base-content bg-base-200
         ${isOpen ? "block" : "hidden"}`}
         >
-          {links.map((link) => (
-            <NavLink
-              key={link.id}
-              className={({ isActive, isPending }) =>
-                `
+          {links.map((link) => {
+            if (link.name === "orders" && !isSignedIn) {
+              return null;
+            } else {
+              return (
+                <NavLink
+                  key={link.id}
+                  className={({ isActive, isPending }) =>
+                    `
     block px-3 py-1 lg:px-4 lg:py-2 lg:p-0 rounded-lg cursor-pointer
     hover:bg-base-300
     ${
@@ -59,12 +65,14 @@ const Navbar = () => {
         : ""
     }
     `
-              }
-              to={link.path}
-            >
-              {link.name}
-            </NavLink>
-          ))}
+                  }
+                  to={link.path}
+                >
+                  {link.name}
+                </NavLink>
+              );
+            }
+          })}
         </ul>
 
         <div className="flex justify-center items-center gap-4">

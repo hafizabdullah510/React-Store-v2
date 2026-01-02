@@ -3,10 +3,10 @@ import { useFetchAllProductsQuery } from "../services/api";
 import { ListToggle, ProductsView, Pagination } from "../components";
 import ErrorElement from "../ui/ErrorElement";
 import { useAppSelector } from "../app/hooks";
-import FormSkeleton from "../ui/FormSkeleton";
-import ListToggleSkeleton from "../ui/ListToggleSkeleton";
-import ProductGridViewSkeleton from "../ui/ProductGridViewSkeleton";
-import ProductListViewSkeleton from "../ui/ProductListViewSkeleton";
+import FormSkeleton from "../ui/skeletons/FormSkeleton";
+import ListToggleSkeleton from "../ui/skeletons/ListToggleSkeleton";
+import ProductGridViewSkeleton from "../ui/skeletons/ProductGridViewSkeleton";
+import ProductListViewSkeleton from "../ui/skeletons/ProductListViewSkeleton";
 const Products = () => {
   const filters = useAppSelector((state) => state.filters.applied);
   const { page, isGridView } = useAppSelector((state) => state.productsView);

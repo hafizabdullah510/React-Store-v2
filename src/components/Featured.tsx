@@ -1,9 +1,9 @@
 import FeaturedTitle from "./FeaturedTitle";
 import ProductItem from "./ProductGridItem";
 import { useFetchFeaturedProductsQuery } from "../services/api";
-import ProductGridViewSkeleton from "../ui/ProductGridViewSkeleton";
+import ProductGridViewSkeleton from "../ui/skeletons/ProductGridViewSkeleton";
 import ErrorElement from "../ui/ErrorElement";
-import FeaturedTitleSkeleton from "../ui/FeaturedTitleSkeleton";
+import FeaturedTitleSkeleton from "../ui/skeletons/FeaturedTitleSkeleton";
 const Featured = () => {
   const {
     data: products = [],

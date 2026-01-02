@@ -9,7 +9,7 @@ import { addToCart } from "../features/cart/cartSlice";
 import { useAppDispatch } from "../app/hooks";
 import FormRowSelect from "../ui/FormSelectRow";
 import toast from "react-hot-toast";
-import SingleProductSkeleton from "../ui/SingleProductSkeleton";
+import SingleProductSkeleton from "../ui/skeletons/SingleProductSkeleton";
 import BreadCrumbs from "../ui/BreadCrumbs";
 
 const options = ["1", "2", "3", "4", "5"];

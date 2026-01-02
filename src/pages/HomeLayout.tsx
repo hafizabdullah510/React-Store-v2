@@ -1,8 +1,9 @@
-import { Navbar } from "../components";
+import { Navbar, Header } from "../components";
 import { Outlet } from "react-router-dom";
 const HomeLayout = () => {
   return (
     <>
+      <Header />
       <Navbar />
       <div className="container-responsive py-20">
         <Outlet />

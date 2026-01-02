@@ -5,6 +5,7 @@ import ListToggle from "./ListToggle";
 import ProductsView from "./ProductsView";
 import Pagination from "./Pagination";
 import CartItem from "./CartItem";
+import Header from "./Header";
 export {
   Navbar,
   Hero,
@@ -13,4 +14,5 @@ export {
   ProductsView,
   Pagination,
   CartItem,
+  Header,
 };

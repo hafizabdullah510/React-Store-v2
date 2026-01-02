@@ -26,8 +26,6 @@ const getDefaultFilters = (): FilterPayload["draft"] => {
   return { ...DEFAULT_VALUES };
 };
 
-console.log(getDefaultFilters());
-
 const initialState: FilterState = {
   draft: getDefaultFilters(),
   applied: JSON.parse(localStorageAppliedFilters || "null"),
